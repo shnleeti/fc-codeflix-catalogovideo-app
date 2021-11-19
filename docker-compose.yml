@@ -4,9 +4,9 @@ services:
   app:
     build: .
     container_name: catalogo-video-app
-    entrypoint: ./.docker/entrypoint.sh
+   # entrypoint: ./.docker/entrypoint.sh
     volumes:
-      - .:/home/node/app
+      - ./catalogo-video-app:/home/node/app
     ports: 
       - 3002:3000
     tty: true
