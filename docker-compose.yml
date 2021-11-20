@@ -4,7 +4,7 @@ services:
   app:
     build: .
     container_name: catalogo-video-app
-   # entrypoint: ./.docker/entrypoint.sh
+    entrypoint: ./.docker/entrypoint.sh
     volumes:
       - ./catalogo-video-app:/home/node/app
     ports: 
