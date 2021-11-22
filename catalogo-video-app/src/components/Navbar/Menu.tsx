@@ -1,6 +1,15 @@
 import React from "react";
 import { IconButton, MenuItem, Menu as MuiMenu } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu'
+import routes, { AppRouteProps } from "../../routes";
+import { Link } from "react-router-dom";
+
+const listRoutes = [
+    'dashboard',
+    'categories.list'
+]
+
+const menuRoutes = routes.filter(route => listRoutes.includes(route.name))
 
 export const Menu = () => {
 
@@ -32,11 +41,24 @@ export const Menu = () => {
                 transformOrigin={{vertical: 'top', horizontal: 'center'}}
                 getContentAnchorEl={null}
             >
-                <MenuItem
-                    onClick={handleClose}
-                >
-                    Categorias
-                </MenuItem>
+                {
+                    listRoutes.map( 
+                        (routeName, key) => {
+                            const route = menuRoutes.find(route => route.name === routeName) as AppRouteProps
+                            return (
+                                <MenuItem
+                                    key={key}
+                                    component={Link}
+                                    to={route.path as string}
+                                    onClick={handleClose}
+                                >
+                                    {route.label}
+                                </MenuItem>
+                            )
+                        }
+                    )
+                }
+                
             </MuiMenu>
         </>
         
