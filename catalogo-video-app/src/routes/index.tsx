@@ -1,5 +1,5 @@
 import {RouteProps} from "react-router-dom"
-import CategoryList from "../pages/category/List";
+import CategoryList from "../pages/category/PageList";
 import Dashboard from "../pages/Dashboard";
 
 export interface AppRouteProps extends RouteProps {

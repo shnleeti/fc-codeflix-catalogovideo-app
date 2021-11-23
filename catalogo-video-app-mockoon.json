@@ -1,0 +1,64 @@
+{
+  "uuid": "e24c4ced-a34e-43a8-9ff6-c4722775561f",
+  "lastMigration": 18,
+  "name": "Catalogo-video-app",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 8000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "14c1dc5f-b8ef-4ebe-a59d-582a492a2083",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "categories",
+      "responses": [
+        {
+          "uuid": "f3fe1327-df35-4694-a7c9-13a0efb614a8",
+          "body": "{\n   \"data\":[\n      {{# repeat 20}}\n      {\n         \"id\":\"{{guid}}\",\n         \"name\":\"Category {{@index}}\",\n         \"is_active\":{{boolean}},\n         \"created_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\",\n         \"deleted_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\"\n      }\n      {{/ repeat}}\n      \n   ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3002"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "https": false,
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
