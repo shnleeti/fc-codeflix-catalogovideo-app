@@ -36,6 +36,66 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "0a117042-0d55-458f-879c-23cb09676235",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "genres",
+      "responses": [
+        {
+          "uuid": "f3da1cff-e972-4727-9b70-9a7df90a0326",
+          "body": "{\n   \"data\":[\n      {{# repeat 15}}\n      {\n        \n        \"name\":\"Genre {{@index}}\",\n        \"is_active\":{{boolean}},\n        \"created_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\",\n        \"categories\":[\n          {{# repeat 3}}\n          {\n             \"id\":\"{{guid}}\",\n             \"name\":\"Category {{@index}}\",\n             \"is_active\":{{boolean}},\n             \"created_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\",\n             \"deleted_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\"\n          }\n          {{/ repeat}}\n        ]\n      }\n      {{/ repeat}}\n   ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3002"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9a06b402-77d7-403a-bd8a-c8f075500d0a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cast_members",
+      "responses": [
+        {
+          "uuid": "cfda0c60-a947-4a47-8e8f-99b87244b34d",
+          "body": "{\n   \"data\":[\n      {{# repeat 20}}\n      {\n         \"name\":\"Castmenber {{@index}}\",\n         \"type\":{{int 1 2}},\n         \"created_at\":\"{{date '2020-11-20' '2021-11-25' \"yyyy-MM-dd'T'HH:mm:ss'\"}}\"\n      }\n      {{/ repeat}}\n      \n   ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:3002"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
